@@ -1,0 +1,2739 @@
+{
+  "canvas": {
+    "w": 192,
+    "h": 490,
+    "model": "Xiaomi Smart Band 9 / 9 NFC",
+    "panel": "AMOLED",
+    "aspect": "胶囊竖屏",
+    "safe_inset": 10,
+    "note": "圆角区域不放关键信息；四周留 10px 安全边距，文字最右/最下不出 182/472"
+  },
+  "palette": {
+    "bg": "#040705",
+    "g0": "#E2FFEC",
+    "g1": "#36FF74",
+    "g2": "#1E9648",
+    "g3": "#105228",
+    "cyan": "#40E8D6",
+    "amber": "#FFB000",
+    "red": "#FF5454",
+    "panel": "#08120C"
+  },
+  "fonts": {
+    "mono16": {
+      "family": "DejaVu Sans Mono",
+      "size": 16,
+      "advance": 10
+    },
+    "mono18": {
+      "family": "DejaVu Sans Mono",
+      "size": 18,
+      "advance": 11
+    },
+    "mono20": {
+      "family": "DejaVu Sans Mono",
+      "size": 20,
+      "advance": 12
+    },
+    "big53": {
+      "family": "DejaVu Sans Mono Bold",
+      "size": 53,
+      "advance": 32
+    },
+    "cjk26": {
+      "family": "SimHei / 思源黑体",
+      "size": 26,
+      "advance": 26
+    }
+  },
+  "glyphs": {
+    "big": {
+      "0": {
+        "file": "assets/big/0.png",
+        "w": 32,
+        "h": 59,
+        "advance": 32,
+        "baseline_from_top": 53
+      },
+      "1": {
+        "file": "assets/big/1.png",
+        "w": 32,
+        "h": 59,
+        "advance": 32,
+        "baseline_from_top": 53
+      },
+      "2": {
+        "file": "assets/big/2.png",
+        "w": 32,
+        "h": 59,
+        "advance": 32,
+        "baseline_from_top": 53
+      },
+      "3": {
+        "file": "assets/big/3.png",
+        "w": 32,
+        "h": 59,
+        "advance": 32,
+        "baseline_from_top": 53
+      },
+      "4": {
+        "file": "assets/big/4.png",
+        "w": 32,
+        "h": 59,
+        "advance": 32,
+        "baseline_from_top": 53
+      },
+      "5": {
+        "file": "assets/big/5.png",
+        "w": 32,
+        "h": 59,
+        "advance": 32,
+        "baseline_from_top": 53
+      },
+      "6": {
+        "file": "assets/big/6.png",
+        "w": 32,
+        "h": 59,
+        "advance": 32,
+        "baseline_from_top": 53
+      },
+      "7": {
+        "file": "assets/big/7.png",
+        "w": 32,
+        "h": 59,
+        "advance": 32,
+        "baseline_from_top": 53
+      },
+      "8": {
+        "file": "assets/big/8.png",
+        "w": 32,
+        "h": 59,
+        "advance": 32,
+        "baseline_from_top": 53
+      },
+      "9": {
+        "file": "assets/big/9.png",
+        "w": 32,
+        "h": 59,
+        "advance": 32,
+        "baseline_from_top": 53
+      },
+      "colon": {
+        "file": "assets/big/colon.png",
+        "w": 32,
+        "h": 59,
+        "advance": 32,
+        "baseline_from_top": 53
+      },
+      "dot": {
+        "file": "assets/big/dot.png",
+        "w": 32,
+        "h": 59,
+        "advance": 32,
+        "baseline_from_top": 53
+      },
+      "dash": {
+        "file": "assets/big/dash.png",
+        "w": 32,
+        "h": 59,
+        "advance": 32,
+        "baseline_from_top": 53
+      }
+    },
+    "small16": {
+      "0": {
+        "file": "assets/small16/0.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "1": {
+        "file": "assets/small16/1.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "2": {
+        "file": "assets/small16/2.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "3": {
+        "file": "assets/small16/3.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "4": {
+        "file": "assets/small16/4.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "5": {
+        "file": "assets/small16/5.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "6": {
+        "file": "assets/small16/6.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "7": {
+        "file": "assets/small16/7.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "8": {
+        "file": "assets/small16/8.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "9": {
+        "file": "assets/small16/9.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "A": {
+        "file": "assets/small16/A.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "B": {
+        "file": "assets/small16/B.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "C": {
+        "file": "assets/small16/C.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "D": {
+        "file": "assets/small16/D.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "E": {
+        "file": "assets/small16/E.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "F": {
+        "file": "assets/small16/F.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "G": {
+        "file": "assets/small16/G.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "H": {
+        "file": "assets/small16/H.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "I": {
+        "file": "assets/small16/I.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "J": {
+        "file": "assets/small16/J.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "K": {
+        "file": "assets/small16/K.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "L": {
+        "file": "assets/small16/L.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "M": {
+        "file": "assets/small16/M.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "N": {
+        "file": "assets/small16/N.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "O": {
+        "file": "assets/small16/O.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "P": {
+        "file": "assets/small16/P.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "Q": {
+        "file": "assets/small16/Q.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "R": {
+        "file": "assets/small16/R.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "S": {
+        "file": "assets/small16/S.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "T": {
+        "file": "assets/small16/T.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "U": {
+        "file": "assets/small16/U.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "V": {
+        "file": "assets/small16/V.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "W": {
+        "file": "assets/small16/W.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "X": {
+        "file": "assets/small16/X.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "Y": {
+        "file": "assets/small16/Y.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "Z": {
+        "file": "assets/small16/Z.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "a": {
+        "file": "assets/small16/a.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "b": {
+        "file": "assets/small16/b.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "c": {
+        "file": "assets/small16/c.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "d": {
+        "file": "assets/small16/d.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "e": {
+        "file": "assets/small16/e.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "f": {
+        "file": "assets/small16/f.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "g": {
+        "file": "assets/small16/g.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "h": {
+        "file": "assets/small16/h.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "i": {
+        "file": "assets/small16/i.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "j": {
+        "file": "assets/small16/j.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "k": {
+        "file": "assets/small16/k.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "l": {
+        "file": "assets/small16/l.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "m": {
+        "file": "assets/small16/m.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "n": {
+        "file": "assets/small16/n.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "o": {
+        "file": "assets/small16/o.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "p": {
+        "file": "assets/small16/p.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "q": {
+        "file": "assets/small16/q.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "r": {
+        "file": "assets/small16/r.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "s": {
+        "file": "assets/small16/s.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "t": {
+        "file": "assets/small16/t.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "u": {
+        "file": "assets/small16/u.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "v": {
+        "file": "assets/small16/v.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "w": {
+        "file": "assets/small16/w.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "x": {
+        "file": "assets/small16/x.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "y": {
+        "file": "assets/small16/y.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "z": {
+        "file": "assets/small16/z.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "colon": {
+        "file": "assets/small16/colon.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "dot": {
+        "file": "assets/small16/dot.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "dash": {
+        "file": "assets/small16/dash.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "slash": {
+        "file": "assets/small16/slash.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "pct": {
+        "file": "assets/small16/pct.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "lb": {
+        "file": "assets/small16/lb.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "rb": {
+        "file": "assets/small16/rb.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "lp": {
+        "file": "assets/small16/lp.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "rp": {
+        "file": "assets/small16/rp.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "apos": {
+        "file": "assets/small16/apos.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "hash": {
+        "file": "assets/small16/hash.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "gt": {
+        "file": "assets/small16/gt.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "lt": {
+        "file": "assets/small16/lt.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "dollar": {
+        "file": "assets/small16/dollar.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "tilde": {
+        "file": "assets/small16/tilde.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      },
+      "us": {
+        "file": "assets/small16/us.png",
+        "w": 10,
+        "h": 22,
+        "advance": 10,
+        "baseline_from_top": 16
+      }
+    },
+    "small18": {
+      "0": {
+        "file": "assets/small18/0.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "1": {
+        "file": "assets/small18/1.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "2": {
+        "file": "assets/small18/2.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "3": {
+        "file": "assets/small18/3.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "4": {
+        "file": "assets/small18/4.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "5": {
+        "file": "assets/small18/5.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "6": {
+        "file": "assets/small18/6.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "7": {
+        "file": "assets/small18/7.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "8": {
+        "file": "assets/small18/8.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "9": {
+        "file": "assets/small18/9.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "A": {
+        "file": "assets/small18/A.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "B": {
+        "file": "assets/small18/B.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "C": {
+        "file": "assets/small18/C.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "D": {
+        "file": "assets/small18/D.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "E": {
+        "file": "assets/small18/E.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "F": {
+        "file": "assets/small18/F.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "G": {
+        "file": "assets/small18/G.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "H": {
+        "file": "assets/small18/H.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "I": {
+        "file": "assets/small18/I.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "J": {
+        "file": "assets/small18/J.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "K": {
+        "file": "assets/small18/K.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "L": {
+        "file": "assets/small18/L.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "M": {
+        "file": "assets/small18/M.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "N": {
+        "file": "assets/small18/N.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "O": {
+        "file": "assets/small18/O.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "P": {
+        "file": "assets/small18/P.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "Q": {
+        "file": "assets/small18/Q.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "R": {
+        "file": "assets/small18/R.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "S": {
+        "file": "assets/small18/S.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "T": {
+        "file": "assets/small18/T.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "U": {
+        "file": "assets/small18/U.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "V": {
+        "file": "assets/small18/V.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "W": {
+        "file": "assets/small18/W.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "X": {
+        "file": "assets/small18/X.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "Y": {
+        "file": "assets/small18/Y.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "Z": {
+        "file": "assets/small18/Z.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "a": {
+        "file": "assets/small18/a.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "b": {
+        "file": "assets/small18/b.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "c": {
+        "file": "assets/small18/c.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "d": {
+        "file": "assets/small18/d.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "e": {
+        "file": "assets/small18/e.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "f": {
+        "file": "assets/small18/f.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "g": {
+        "file": "assets/small18/g.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "h": {
+        "file": "assets/small18/h.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "i": {
+        "file": "assets/small18/i.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "j": {
+        "file": "assets/small18/j.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "k": {
+        "file": "assets/small18/k.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "l": {
+        "file": "assets/small18/l.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "m": {
+        "file": "assets/small18/m.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "n": {
+        "file": "assets/small18/n.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "o": {
+        "file": "assets/small18/o.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "p": {
+        "file": "assets/small18/p.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "q": {
+        "file": "assets/small18/q.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "r": {
+        "file": "assets/small18/r.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "s": {
+        "file": "assets/small18/s.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "t": {
+        "file": "assets/small18/t.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "u": {
+        "file": "assets/small18/u.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "v": {
+        "file": "assets/small18/v.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "w": {
+        "file": "assets/small18/w.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "x": {
+        "file": "assets/small18/x.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "y": {
+        "file": "assets/small18/y.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "z": {
+        "file": "assets/small18/z.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "colon": {
+        "file": "assets/small18/colon.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "dot": {
+        "file": "assets/small18/dot.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "dash": {
+        "file": "assets/small18/dash.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "slash": {
+        "file": "assets/small18/slash.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "pct": {
+        "file": "assets/small18/pct.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "lb": {
+        "file": "assets/small18/lb.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "rb": {
+        "file": "assets/small18/rb.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "lp": {
+        "file": "assets/small18/lp.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "rp": {
+        "file": "assets/small18/rp.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "apos": {
+        "file": "assets/small18/apos.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "hash": {
+        "file": "assets/small18/hash.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "gt": {
+        "file": "assets/small18/gt.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "lt": {
+        "file": "assets/small18/lt.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "dollar": {
+        "file": "assets/small18/dollar.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "tilde": {
+        "file": "assets/small18/tilde.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      },
+      "us": {
+        "file": "assets/small18/us.png",
+        "w": 11,
+        "h": 24,
+        "advance": 11,
+        "baseline_from_top": 18
+      }
+    },
+    "small20": {
+      "0": {
+        "file": "assets/small20/0.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "1": {
+        "file": "assets/small20/1.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "2": {
+        "file": "assets/small20/2.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "3": {
+        "file": "assets/small20/3.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "4": {
+        "file": "assets/small20/4.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "5": {
+        "file": "assets/small20/5.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "6": {
+        "file": "assets/small20/6.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "7": {
+        "file": "assets/small20/7.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "8": {
+        "file": "assets/small20/8.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "9": {
+        "file": "assets/small20/9.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "A": {
+        "file": "assets/small20/A.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "B": {
+        "file": "assets/small20/B.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "C": {
+        "file": "assets/small20/C.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "D": {
+        "file": "assets/small20/D.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "E": {
+        "file": "assets/small20/E.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "F": {
+        "file": "assets/small20/F.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "G": {
+        "file": "assets/small20/G.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "H": {
+        "file": "assets/small20/H.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "I": {
+        "file": "assets/small20/I.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "J": {
+        "file": "assets/small20/J.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "K": {
+        "file": "assets/small20/K.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "L": {
+        "file": "assets/small20/L.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "M": {
+        "file": "assets/small20/M.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "N": {
+        "file": "assets/small20/N.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "O": {
+        "file": "assets/small20/O.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "P": {
+        "file": "assets/small20/P.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "Q": {
+        "file": "assets/small20/Q.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "R": {
+        "file": "assets/small20/R.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "S": {
+        "file": "assets/small20/S.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "T": {
+        "file": "assets/small20/T.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "U": {
+        "file": "assets/small20/U.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "V": {
+        "file": "assets/small20/V.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "W": {
+        "file": "assets/small20/W.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "X": {
+        "file": "assets/small20/X.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "Y": {
+        "file": "assets/small20/Y.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "Z": {
+        "file": "assets/small20/Z.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "a": {
+        "file": "assets/small20/a.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "b": {
+        "file": "assets/small20/b.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "c": {
+        "file": "assets/small20/c.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "d": {
+        "file": "assets/small20/d.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "e": {
+        "file": "assets/small20/e.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "f": {
+        "file": "assets/small20/f.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "g": {
+        "file": "assets/small20/g.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "h": {
+        "file": "assets/small20/h.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "i": {
+        "file": "assets/small20/i.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "j": {
+        "file": "assets/small20/j.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "k": {
+        "file": "assets/small20/k.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "l": {
+        "file": "assets/small20/l.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "m": {
+        "file": "assets/small20/m.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "n": {
+        "file": "assets/small20/n.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "o": {
+        "file": "assets/small20/o.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "p": {
+        "file": "assets/small20/p.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "q": {
+        "file": "assets/small20/q.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "r": {
+        "file": "assets/small20/r.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "s": {
+        "file": "assets/small20/s.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "t": {
+        "file": "assets/small20/t.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "u": {
+        "file": "assets/small20/u.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "v": {
+        "file": "assets/small20/v.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "w": {
+        "file": "assets/small20/w.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "x": {
+        "file": "assets/small20/x.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "y": {
+        "file": "assets/small20/y.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "z": {
+        "file": "assets/small20/z.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "colon": {
+        "file": "assets/small20/colon.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "dot": {
+        "file": "assets/small20/dot.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "dash": {
+        "file": "assets/small20/dash.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "slash": {
+        "file": "assets/small20/slash.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "pct": {
+        "file": "assets/small20/pct.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "lb": {
+        "file": "assets/small20/lb.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "rb": {
+        "file": "assets/small20/rb.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "lp": {
+        "file": "assets/small20/lp.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "rp": {
+        "file": "assets/small20/rp.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "apos": {
+        "file": "assets/small20/apos.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "hash": {
+        "file": "assets/small20/hash.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "gt": {
+        "file": "assets/small20/gt.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "lt": {
+        "file": "assets/small20/lt.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "dollar": {
+        "file": "assets/small20/dollar.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "tilde": {
+        "file": "assets/small20/tilde.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      },
+      "us": {
+        "file": "assets/small20/us.png",
+        "w": 12,
+        "h": 26,
+        "advance": 12,
+        "baseline_from_top": 20
+      }
+    },
+    "cjk": {
+      "cjk26_008001": {
+        "file": "assets/cjk/cjk26_8001.png",
+        "char": "老",
+        "w": 28,
+        "h": 32,
+        "advance": 26
+      },
+      "cjk26_00738B": {
+        "file": "assets/cjk/cjk26_738B.png",
+        "char": "王",
+        "w": 28,
+        "h": 32,
+        "advance": 26
+      },
+      "cjk26_00665A": {
+        "file": "assets/cjk/cjk26_665A.png",
+        "char": "晚",
+        "w": 28,
+        "h": 32,
+        "advance": 26
+      },
+      "cjk26_004E0A": {
+        "file": "assets/cjk/cjk26_4E0A.png",
+        "char": "上",
+        "w": 28,
+        "h": 32,
+        "advance": 26
+      },
+      "cjk26_0070B9": {
+        "file": "assets/cjk/cjk26_70B9.png",
+        "char": "点",
+        "w": 28,
+        "h": 32,
+        "advance": 26
+      },
+      "cjk26_005730": {
+        "file": "assets/cjk/cjk26_5730.png",
+        "char": "地",
+        "w": 28,
+        "h": 32,
+        "advance": 26
+      },
+      "cjk26_0065B9": {
+        "file": "assets/cjk/cjk26_65B9.png",
+        "char": "方",
+        "w": 28,
+        "h": 32,
+        "advance": 26
+      },
+      "cjk26_005230": {
+        "file": "assets/cjk/cjk26_5230.png",
+        "char": "到",
+        "w": 28,
+        "h": 32,
+        "advance": 26
+      },
+      "cjk26_004E86": {
+        "file": "assets/cjk/cjk26_4E86.png",
+        "char": "了",
+        "w": 28,
+        "h": 32,
+        "advance": 26
+      },
+      "cjk26_007ED9": {
+        "file": "assets/cjk/cjk26_7ED9.png",
+        "char": "给",
+        "w": 28,
+        "h": 32,
+        "advance": 26
+      },
+      "cjk26_004F60": {
+        "file": "assets/cjk/cjk26_4F60.png",
+        "char": "你",
+        "w": 28,
+        "h": 32,
+        "advance": 26
+      },
+      "cjk26_007559": {
+        "file": "assets/cjk/cjk26_7559.png",
+        "char": "留",
+        "w": 28,
+        "h": 32,
+        "advance": 26
+      },
+      "cjk26_004F4D": {
+        "file": "assets/cjk/cjk26_4F4D.png",
+        "char": "位",
+        "w": 28,
+        "h": 32,
+        "advance": 26
+      },
+      "cjk26_006D88": {
+        "file": "assets/cjk/cjk26_6D88.png",
+        "char": "消",
+        "w": 28,
+        "h": 32,
+        "advance": 26
+      },
+      "cjk26_00606F": {
+        "file": "assets/cjk/cjk26_606F.png",
+        "char": "息",
+        "w": 28,
+        "h": 32,
+        "advance": 26
+      },
+      "cjk26_00672A": {
+        "file": "assets/cjk/cjk26_672A.png",
+        "char": "未",
+        "w": 28,
+        "h": 32,
+        "advance": 26
+      },
+      "cjk26_008BFB": {
+        "file": "assets/cjk/cjk26_8BFB.png",
+        "char": "读",
+        "w": 28,
+        "h": 32,
+        "advance": 26
+      },
+      "cjk26_0067E5": {
+        "file": "assets/cjk/cjk26_67E5.png",
+        "char": "查",
+        "w": 28,
+        "h": 32,
+        "advance": 26
+      },
+      "cjk26_00770B": {
+        "file": "assets/cjk/cjk26_770B.png",
+        "char": "看",
+        "w": 28,
+        "h": 32,
+        "advance": 26
+      },
+      "cjk26_008FD4": {
+        "file": "assets/cjk/cjk26_8FD4.png",
+        "char": "返",
+        "w": 28,
+        "h": 32,
+        "advance": 26
+      },
+      "cjk26_0056DE": {
+        "file": "assets/cjk/cjk26_56DE.png",
+        "char": "回",
+        "w": 28,
+        "h": 32,
+        "advance": 26
+      },
+      "cjk22_008001": {
+        "file": "assets/cjk/cjk22_8001.png",
+        "char": "老",
+        "w": 24,
+        "h": 28,
+        "advance": 22
+      },
+      "cjk22_00738B": {
+        "file": "assets/cjk/cjk22_738B.png",
+        "char": "王",
+        "w": 24,
+        "h": 28,
+        "advance": 22
+      },
+      "cjk22_00665A": {
+        "file": "assets/cjk/cjk22_665A.png",
+        "char": "晚",
+        "w": 24,
+        "h": 28,
+        "advance": 22
+      },
+      "cjk22_004E0A": {
+        "file": "assets/cjk/cjk22_4E0A.png",
+        "char": "上",
+        "w": 24,
+        "h": 28,
+        "advance": 22
+      },
+      "cjk22_0070B9": {
+        "file": "assets/cjk/cjk22_70B9.png",
+        "char": "点",
+        "w": 24,
+        "h": 28,
+        "advance": 22
+      },
+      "cjk22_005730": {
+        "file": "assets/cjk/cjk22_5730.png",
+        "char": "地",
+        "w": 24,
+        "h": 28,
+        "advance": 22
+      },
+      "cjk22_0065B9": {
+        "file": "assets/cjk/cjk22_65B9.png",
+        "char": "方",
+        "w": 24,
+        "h": 28,
+        "advance": 22
+      },
+      "cjk22_005230": {
+        "file": "assets/cjk/cjk22_5230.png",
+        "char": "到",
+        "w": 24,
+        "h": 28,
+        "advance": 22
+      },
+      "cjk22_004E86": {
+        "file": "assets/cjk/cjk22_4E86.png",
+        "char": "了",
+        "w": 24,
+        "h": 28,
+        "advance": 22
+      },
+      "cjk22_007ED9": {
+        "file": "assets/cjk/cjk22_7ED9.png",
+        "char": "给",
+        "w": 24,
+        "h": 28,
+        "advance": 22
+      },
+      "cjk22_004F60": {
+        "file": "assets/cjk/cjk22_4F60.png",
+        "char": "你",
+        "w": 24,
+        "h": 28,
+        "advance": 22
+      },
+      "cjk22_007559": {
+        "file": "assets/cjk/cjk22_7559.png",
+        "char": "留",
+        "w": 24,
+        "h": 28,
+        "advance": 22
+      },
+      "cjk22_004F4D": {
+        "file": "assets/cjk/cjk22_4F4D.png",
+        "char": "位",
+        "w": 24,
+        "h": 28,
+        "advance": 22
+      },
+      "cjk22_006D88": {
+        "file": "assets/cjk/cjk22_6D88.png",
+        "char": "消",
+        "w": 24,
+        "h": 28,
+        "advance": 22
+      },
+      "cjk22_00606F": {
+        "file": "assets/cjk/cjk22_606F.png",
+        "char": "息",
+        "w": 24,
+        "h": 28,
+        "advance": 22
+      },
+      "cjk22_00672A": {
+        "file": "assets/cjk/cjk22_672A.png",
+        "char": "未",
+        "w": 24,
+        "h": 28,
+        "advance": 22
+      },
+      "cjk22_008BFB": {
+        "file": "assets/cjk/cjk22_8BFB.png",
+        "char": "读",
+        "w": 24,
+        "h": 28,
+        "advance": 22
+      },
+      "cjk22_0067E5": {
+        "file": "assets/cjk/cjk22_67E5.png",
+        "char": "查",
+        "w": 24,
+        "h": 28,
+        "advance": 22
+      },
+      "cjk22_00770B": {
+        "file": "assets/cjk/cjk22_770B.png",
+        "char": "看",
+        "w": 24,
+        "h": 28,
+        "advance": 22
+      },
+      "cjk22_008FD4": {
+        "file": "assets/cjk/cjk22_8FD4.png",
+        "char": "返",
+        "w": 24,
+        "h": 28,
+        "advance": 22
+      },
+      "cjk22_0056DE": {
+        "file": "assets/cjk/cjk22_56DE.png",
+        "char": "回",
+        "w": 24,
+        "h": 28,
+        "advance": 22
+      }
+    }
+  },
+  "elements": [
+    {
+      "x": 10,
+      "y": 20,
+      "anchor": "ls",
+      "font": "mono18",
+      "size": 18,
+      "advance": 11,
+      "color": "#1E9648",
+      "sample": "root@band9",
+      "name": "status.prompt",
+      "kind": "text"
+    },
+    {
+      "file": "assets/icons/bt.png",
+      "x": 126,
+      "y": 9,
+      "w": 7,
+      "h": 11,
+      "role": "bt_link",
+      "note": "x 随电量位数右移：x = 182 - len(pct)*11 - 12",
+      "name": "status.bt",
+      "kind": "asset"
+    },
+    {
+      "x": 182,
+      "y": 20,
+      "anchor": "rs",
+      "font": "mono18",
+      "size": 18,
+      "advance": 11,
+      "color": "#36FF74",
+      "sample": "86%",
+      "role": "battery",
+      "name": "status.pct",
+      "kind": "text"
+    },
+    {
+      "x": 121,
+      "y": 8,
+      "w": 22,
+      "h": 9,
+      "segs": 4,
+      "gap": 2,
+      "color": "#36FF74",
+      "off": "#105228",
+      "role": "battery",
+      "name": "status.batbar",
+      "kind": "bar"
+    },
+    {
+      "x0": 10,
+      "x1": 182,
+      "y": 26,
+      "dash": 2,
+      "gap": 2,
+      "color": "#105228",
+      "name": "rule1",
+      "kind": "rule"
+    },
+    {
+      "x": 10,
+      "y": 45,
+      "anchor": "ls",
+      "font": "mono18",
+      "size": 18,
+      "advance": 11,
+      "color": "#1E9648",
+      "sample": "$ date",
+      "name": "cmd.date",
+      "kind": "text"
+    },
+    {
+      "x": 82,
+      "y": 45,
+      "anchor": "ls",
+      "font": "mono18",
+      "size": 18,
+      "advance": 11,
+      "color": "#105228",
+      "sample": "# local",
+      "name": "cmd.comment",
+      "kind": "text"
+    },
+    {
+      "sheet": "big",
+      "x": 16,
+      "y": 100,
+      "anchor": "baseline",
+      "advance": 32,
+      "size": 53,
+      "color": "#E2FFEC",
+      "sample": "08:24",
+      "note": "HH:MM 共 5 字（4 数字 + 冒号），整行 160px 居中；空格位不放字；12 小时制时 AM/PM 放 date 行",
+      "name": "time",
+      "kind": "digits"
+    },
+    {
+      "x": 10,
+      "y": 124,
+      "anchor": "ls",
+      "font": "mono20",
+      "size": 20,
+      "advance": 12,
+      "color": "#1E9648",
+      "sample": "WED 12JUN25",
+      "note": "≤12 字符（12×12=144px）；12 小时制改成 'WED 12JUN2025 AM' 需 15 字符 → 换 16px",
+      "name": "date",
+      "kind": "text"
+    },
+    {
+      "x": 182,
+      "y": 45,
+      "anchor": "rs",
+      "font": "mono16",
+      "size": 16,
+      "advance": 10,
+      "color": "#36FF74",
+      "sample": ":37",
+      "role": "second",
+      "note": "秒只在命令行动；静态表盘可关掉，减少每秒唤醒",
+      "name": "cmd.sec",
+      "kind": "text"
+    },
+    {
+      "x0": 10,
+      "x1": 182,
+      "y": 134,
+      "dash": 1,
+      "gap": 3,
+      "color": "#105228",
+      "name": "rule2",
+      "kind": "rule"
+    },
+    {
+      "x": 10,
+      "y": 156,
+      "anchor": "ls",
+      "font": "mono18",
+      "size": 18,
+      "advance": 11,
+      "color": "#36FF74",
+      "sample": "# resmon",
+      "name": "resmon.hdr",
+      "kind": "text"
+    },
+    {
+      "x": 182,
+      "y": 156,
+      "anchor": "rs",
+      "font": "mono18",
+      "size": 18,
+      "advance": 11,
+      "color": "#105228",
+      "sample": "08:24",
+      "name": "resmon.clock",
+      "kind": "text"
+    },
+    {
+      "x": 10,
+      "y": 182,
+      "anchor": "ls",
+      "font": "mono18",
+      "size": 18,
+      "advance": 11,
+      "color": "#1E9648",
+      "sample": "BAT",
+      "name": "row0.label",
+      "kind": "text"
+    },
+    {
+      "x": 73,
+      "y": 170,
+      "w": 60,
+      "h": 10,
+      "segs": 10,
+      "gap": 2,
+      "color": "#36FF74",
+      "off": "#105228",
+      "role": "battery",
+      "note": "心率行换 wave 波形（8 根柱，宽 6、间距 2）",
+      "name": "row0.bar",
+      "kind": "bar"
+    },
+    {
+      "x": 182,
+      "y": 182,
+      "anchor": "rs",
+      "font": "mono18",
+      "size": 18,
+      "advance": 11,
+      "color": "#36FF74",
+      "sample": "86%",
+      "role": "battery",
+      "name": "row0.value",
+      "kind": "text"
+    },
+    {
+      "x": 10,
+      "y": 207,
+      "anchor": "ls",
+      "font": "mono18",
+      "size": 18,
+      "advance": 11,
+      "color": "#1E9648",
+      "sample": "HR",
+      "name": "row1.label",
+      "kind": "text"
+    },
+    {
+      "x": 73,
+      "y": 195,
+      "w": 60,
+      "h": 10,
+      "segs": 10,
+      "gap": 2,
+      "color": "#36FF74",
+      "off": "#105228",
+      "role": "heart_rate",
+      "note": "心率行换 wave 波形（8 根柱，宽 6、间距 2）",
+      "name": "row1.bar",
+      "kind": "bar"
+    },
+    {
+      "x": 182,
+      "y": 207,
+      "anchor": "rs",
+      "font": "mono18",
+      "size": 18,
+      "advance": 11,
+      "color": "#36FF74",
+      "sample": "72",
+      "role": "heart_rate",
+      "name": "row1.value",
+      "kind": "text"
+    },
+    {
+      "x": 10,
+      "y": 232,
+      "anchor": "ls",
+      "font": "mono18",
+      "size": 18,
+      "advance": 11,
+      "color": "#1E9648",
+      "sample": "STEP",
+      "name": "row2.label",
+      "kind": "text"
+    },
+    {
+      "x": 73,
+      "y": 220,
+      "w": 60,
+      "h": 10,
+      "segs": 10,
+      "gap": 2,
+      "color": "#36FF74",
+      "off": "#105228",
+      "role": "steps",
+      "note": "心率行换 wave 波形（8 根柱，宽 6、间距 2）",
+      "name": "row2.bar",
+      "kind": "bar"
+    },
+    {
+      "x": 182,
+      "y": 232,
+      "anchor": "rs",
+      "font": "mono18",
+      "size": 18,
+      "advance": 11,
+      "color": "#36FF74",
+      "sample": "8204",
+      "role": "steps",
+      "name": "row2.value",
+      "kind": "text"
+    },
+    {
+      "x": 10,
+      "y": 257,
+      "anchor": "ls",
+      "font": "mono18",
+      "size": 18,
+      "advance": 11,
+      "color": "#1E9648",
+      "sample": "KCAL",
+      "name": "row3.label",
+      "kind": "text"
+    },
+    {
+      "x": 73,
+      "y": 245,
+      "w": 60,
+      "h": 10,
+      "segs": 10,
+      "gap": 2,
+      "color": "#36FF74",
+      "off": "#105228",
+      "role": "calories",
+      "note": "心率行换 wave 波形（8 根柱，宽 6、间距 2）",
+      "name": "row3.bar",
+      "kind": "bar"
+    },
+    {
+      "x": 182,
+      "y": 257,
+      "anchor": "rs",
+      "font": "mono18",
+      "size": 18,
+      "advance": 11,
+      "color": "#36FF74",
+      "sample": "312",
+      "role": "calories",
+      "name": "row3.value",
+      "kind": "text"
+    },
+    {
+      "x": 10,
+      "y": 282,
+      "anchor": "ls",
+      "font": "mono18",
+      "size": 18,
+      "advance": 11,
+      "color": "#1E9648",
+      "sample": "TEMP",
+      "name": "row4.label",
+      "kind": "text"
+    },
+    {
+      "x": 73,
+      "y": 270,
+      "w": 60,
+      "h": 10,
+      "segs": 10,
+      "gap": 2,
+      "color": "#36FF74",
+      "off": "#105228",
+      "role": "weather",
+      "note": "心率行换 wave 波形（8 根柱，宽 6、间距 2）",
+      "name": "row4.bar",
+      "kind": "bar"
+    },
+    {
+      "x": 182,
+      "y": 282,
+      "anchor": "rs",
+      "font": "mono18",
+      "size": 18,
+      "advance": 11,
+      "color": "#36FF74",
+      "sample": "27C",
+      "role": "weather",
+      "name": "row4.value",
+      "kind": "text"
+    },
+    {
+      "x": 10,
+      "y": 306,
+      "anchor": "ls",
+      "font": "mono16",
+      "size": 16,
+      "advance": 10,
+      "color": "#1E9648",
+      "sample": "$ tail band.log",
+      "note": "16px 行宽 ≤17 字符；日志行由系统事件刷新（非每秒跳数）",
+      "name": "log.hdr",
+      "kind": "text"
+    },
+    {
+      "x": 10,
+      "y": 326,
+      "anchor": "ls",
+      "font": "mono16",
+      "size": 16,
+      "advance": 10,
+      "color": "#1E9648",
+      "sample": "[08:20] btn1 wake",
+      "role": "event_log",
+      "name": "log0",
+      "kind": "text"
+    },
+    {
+      "x": 10,
+      "y": 344,
+      "anchor": "ls",
+      "font": "mono16",
+      "size": 16,
+      "advance": 10,
+      "color": "#1E9648",
+      "sample": "[08:20] btn1 wake",
+      "role": "event_log",
+      "name": "log1",
+      "kind": "text"
+    },
+    {
+      "x": 10,
+      "y": 362,
+      "anchor": "ls",
+      "font": "mono16",
+      "size": 16,
+      "advance": 10,
+      "color": "#1E9648",
+      "sample": "[08:20] btn1 wake",
+      "role": "event_log",
+      "name": "log2",
+      "kind": "text"
+    },
+    {
+      "x": 10,
+      "y": 380,
+      "anchor": "ls",
+      "font": "mono16",
+      "size": 16,
+      "advance": 10,
+      "color": "#1E9648",
+      "sample": "[08:20] btn1 wake",
+      "role": "event_log",
+      "name": "log3",
+      "kind": "text"
+    },
+    {
+      "x0": 10,
+      "x1": 182,
+      "y": 392,
+      "dash": 2,
+      "gap": 2,
+      "color": "#105228",
+      "name": "rule3",
+      "kind": "rule"
+    },
+    {
+      "x": 10,
+      "y": 410,
+      "anchor": "ls",
+      "font": "mono18",
+      "size": 18,
+      "advance": 11,
+      "color": "#1E9648",
+      "sample": "$ uptime",
+      "name": "uptime.cmd",
+      "kind": "text"
+    },
+    {
+      "x": 182,
+      "y": 410,
+      "anchor": "rs",
+      "font": "mono18",
+      "size": 18,
+      "advance": 11,
+      "color": "#36FF74",
+      "sample": "12d 3h",
+      "name": "uptime.val",
+      "kind": "text"
+    },
+    {
+      "x": 10,
+      "y": 448,
+      "anchor": "ls",
+      "font": "mono18",
+      "size": 18,
+      "advance": 11,
+      "color": "#36FF74",
+      "sample": "root@band9:~$",
+      "name": "prompt",
+      "kind": "text"
+    },
+    {
+      "x": 158,
+      "y": 436,
+      "w": 9,
+      "h": 14,
+      "color": "#40E8D6",
+      "role": "blink",
+      "note": "200ms 亮 / 300ms 灭；静态面可常亮",
+      "name": "cursor",
+      "kind": "rect"
+    },
+    {
+      "x": 10,
+      "y": 472,
+      "anchor": "ls",
+      "font": "mono16",
+      "size": 16,
+      "advance": 10,
+      "color": "#105228",
+      "sample": "bt:1 dnd:0 ala:1",
+      "name": "tail",
+      "kind": "text"
+    }
+  ],
+  "notify": {
+    "backdrop": {
+      "x": 0,
+      "y": 132,
+      "w": 192,
+      "h": 358,
+      "color": "#000000"
+    },
+    "card": {
+      "x": 4,
+      "y": 146,
+      "w": 183,
+      "h": 284,
+      "fill": "#08120C",
+      "border": "#36FF74"
+    },
+    "rows": [
+      {
+        "name": "ntf.title",
+        "x": 12,
+        "y": 154,
+        "anchor": "la",
+        "font": "mono16",
+        "sample": "[ INCOMING ]",
+        "color": "#36FF74"
+      },
+      {
+        "name": "ntf.count",
+        "x": 180,
+        "y": 154,
+        "anchor": "ra",
+        "font": "mono16",
+        "sample": "1/3",
+        "color": "#105228"
+      },
+      {
+        "name": "ntf.rule",
+        "x0": 8,
+        "x1": 183,
+        "y": 174,
+        "dash": 2,
+        "gap": 2
+      },
+      {
+        "name": "ntf.app",
+        "x": 12,
+        "y": 184,
+        "anchor": "la",
+        "font": "mono16",
+        "sample": "WECHAT",
+        "color": "#1E9648"
+      },
+      {
+        "name": "ntf.time",
+        "x": 180,
+        "y": 184,
+        "anchor": "ra",
+        "font": "mono16",
+        "sample": "08:24",
+        "color": "#105228"
+      },
+      {
+        "name": "ntf.sender",
+        "x": 12,
+        "y": 204,
+        "anchor": "la",
+        "font": "cjk26",
+        "sample": "老王",
+        "color": "#36FF74"
+      },
+      {
+        "name": "ntf.line1",
+        "x": 12,
+        "y": 242,
+        "anchor": "la",
+        "font": "cjk22",
+        "sample": "晚上 7 点老地方",
+        "color": "#36FF74"
+      },
+      {
+        "name": "ntf.line2",
+        "x": 12,
+        "y": 274,
+        "anchor": "la",
+        "font": "cjk22",
+        "sample": "到了给你留位",
+        "color": "#1E9648"
+      },
+      {
+        "name": "ntf.meta",
+        "x": 12,
+        "y": 306,
+        "anchor": "la",
+        "font": "mono16",
+        "sample": "seen:1 unread:2",
+        "color": "#105228"
+      },
+      {
+        "name": "ntf.keys",
+        "x": 10,
+        "y": 366,
+        "w": 52,
+        "h": 18,
+        "gap": 6,
+        "sample": [
+          "^ESC",
+          "O VIEW",
+          "SWIPE>"
+        ]
+      },
+      {
+        "name": "ntf.prompt",
+        "x": 12,
+        "y": 404,
+        "anchor": "la",
+        "font": "mono16",
+        "sample": "$ reply >",
+        "color": "#105228"
+      }
+    ]
+  },
+  "aod": {
+    "bg": "#000000",
+    "time": {
+      "y": 232,
+      "x": 16,
+      "font": "big53",
+      "color": "#2C6840",
+      "sample": "08:24",
+      "dim_note": "亮度 ≈ 28% 的 G1，避免全亮烧屏"
+    },
+    "shake": {
+      "offsets": [
+        0,
+        2,
+        4,
+        2
+      ],
+      "period_min": 60,
+      "note": "每小时把整块内容按 offsets 循环下移，1px/步，防 AMOLED 残影"
+    },
+    "rule": {
+      "y": 266,
+      "x0": 52,
+      "x1": 140,
+      "color": "#122A18",
+      "dash": 2,
+      "gap": 4
+    },
+    "battery": {
+      "x": 60,
+      "y": 300,
+      "cell": 7,
+      "gap": 5,
+      "lit_color": "#1A3E22",
+      "low_color": "#966800",
+      "note": "4 格，<20% 转琥珀"
+    },
+    "cursor": {
+      "x": 130,
+      "y": 318,
+      "w": 14,
+      "h": 6,
+      "color": "#40E8D6",
+      "note": "AOD 内 1Hz 闪；静态面可常亮"
+    }
+  }
+}
