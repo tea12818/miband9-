@@ -32,15 +32,44 @@ MONO_B = ["DejaVuSansMono-Bold.ttf", "consolab.ttf", "LiberationMono-Bold.ttf"]
 CJK = ["simhei.ttf", "msyh.ttc", "NotoSansCJK-Regular.ttc", "wqy-microhei.ttc"]
 
 # ------------------------------------------------------------------ 调色板
-BG   = (4, 7, 5)        # 纯黑 (0,0,0) 最省电；这里带一点绿，肉眼更"荧光屏"
-G0   = (226, 255, 236)  # 高亮白绿 —— 只给大号时间
-G1   = (54, 255, 116)   # 主绿 —— 数值
-G2   = (30, 150, 72)    # 中绿 —— 标签 / 命令
-G3   = (16, 82, 40)     # 暗绿 —— 分隔线 / 未填充 / 注释
-CY   = (64, 232, 214)   # 青 —— 光标 / 强调
-AM   = (255, 176, 0)    # 琥珀 —— 警告 / 低电
-RED  = (255, 84, 84)    # 红 —— 错误
-PANEL = (8, 18, 12)     # 浮层底色
+# THEME: "mono" = 黑白单色（默认） | "green" = 荧光绿（原版）
+THEME = "mono"
+
+_PALETTES = {
+    # 黑白：只用亮度层级区分信息重要性，AMOLED 底色纯黑，省电且无残影风险
+    "mono": dict(
+        BG=(0, 0, 0),          # 纯黑，像素不发光
+        G0=(255, 255, 255),    # 纯白 —— 只给大号时间
+        G1=(212, 212, 212),    # 主体 —— 数值 / 提示符
+        G2=(138, 138, 138),    # 次要 —— 标签 / 命令 / 日期
+        G3=(56, 56, 56),       # 暗灰 —— 分隔线 / 未填充 / 注释
+        CY=(255, 255, 255),    # 强调（光标）—— 单色下用纯白
+        AM=(255, 255, 255),    # 警告 —— 靠反白块表达，不靠色相
+        RED=(255, 255, 255),   # 错误 —— 同上
+        PANEL=(16, 16, 16),    # 浮层底色
+    ),
+    # 荧光绿：初版配色，留作可切换方案
+    "green": dict(
+        BG=(4, 7, 5),
+        G0=(226, 255, 236),
+        G1=(54, 255, 116),
+        G2=(30, 150, 72),
+        G3=(16, 82, 40),
+        CY=(64, 232, 214),
+        AM=(255, 176, 0),
+        RED=(255, 84, 84),
+        PANEL=(8, 18, 12),
+    ),
+}
+
+_P = _PALETTES[THEME]
+BG, G0, G1, G2, G3 = _P["BG"], _P["G0"], _P["G1"], _P["G2"], _P["G3"]
+CY, AM, RED, PANEL = _P["CY"], _P["AM"], _P["RED"], _P["PANEL"]
+
+
+def hx(c):
+    """(r,g,b) -> '#RRGGBB'"""
+    return "#%02X%02X%02X" % c
 
 # ------------------------------------------------------------------ 字体
 def _find(names):
@@ -157,9 +186,9 @@ def draw_common(d, st, blank=False):
     text(d, (P, Y_STAT), "root@band9", S18, G2)
     pct = f"{st['battery']}%"
     txt = "" if blank else pct
-    tx = W - P - len(pct) * A18
-    bt_icon(d, tx - 12, Y_STAT - 11, hi if blank else hi)
-    text(d, (W - P, Y_STAT), txt, S18, hi, anchor="rs")
+    tx = W - P - len(pct) * A16          # 电量用 16px 收窄，给蓝牙图标留缝
+    bt_icon(d, tx - 14, Y_STAT - 10, hi)
+    text(d, (W - P, Y_STAT), txt, S16, hi, anchor="rs")
 
     rule(d, Y_R1, P, W - P, G3, dash=2, gap=2)
 
@@ -196,8 +225,14 @@ def draw_common(d, st, blank=False):
         else:
             seg_bar(d, bx, y - 12, bw, 10, r["ratio"], 10,
                     on=r.get("color", g), off=G3)
-        text(d, (W - P, y), "" if blank else r["value"], S18, r.get("color", g),
-             anchor="rs")
+        val = "" if blank else r["value"]
+        if i in st.get("inverse", []) and val:
+            # 反白：白底黑字，单色主题下唯一可用的"警告"手段
+            w_ = len(val) * A18
+            d.rectangle([W - P - w_ - 2, y - 14, W - P + 1, y + 2], fill=G0)
+            text(d, (W - P, y), val, S18, BG, anchor="rs")
+        else:
+            text(d, (W - P, y), val, S18, r.get("color", g), anchor="rs")
 
     # ⑥ 日志尾块（16px，最多 17 字符）
     text(d, (P, Y_LOGHD), "$ tail band.log", S16, G2)
@@ -242,7 +277,8 @@ def state_idle():
 
 def state_lowbat():
     return dict(
-        green=AM, time_color=(255, 214, 150), battery=9, hhmm="22:47", sec="02",
+        green=AM, time_color=G0 if THEME == "mono" else (255, 214, 150),
+        battery=9, hhmm="22:47", sec="02", inverse=[0],
         cmd="$ date", comment="# nfc", date="THU 13JUN25", clock="22:47",
         rows=[
             dict(label="BAT", ratio=0.09, value="9%", color=RED),
@@ -303,24 +339,37 @@ def state_boot():
 
 
 # ------------------------------------------------------------------ AOD 息屏态
+# AOD 灰度（单色主题下用亮度当层级）
+
+
+
+def _aod_colors():
+    if THEME == "mono":
+        return dict(time=(70, 70, 70), rule=(24, 24, 24),
+                    bat_on=(88, 88, 88), bat_low=(200, 200, 200),
+                    bat_off=(20, 20, 20), cursor=(150, 150, 150))
+    return dict(time=(44, 104, 64), rule=(18, 42, 24),
+                bat_on=(26, 62, 34), bat_low=(150, 104, 0),
+                bat_off=(10, 24, 14), cursor=(64, 232, 214))
+
+
 def draw_aod(hhmm="08:24", batt=86, shake=0):
-    """AOD：全黑 + 极暗绿时间 + 一枚光标；像素位移防 AMOLED 残影"""
+    """AOD：全黑 + 低亮度时间 + 电量点 + 光标；像素位移防 AMOLED 残影"""
+    ac = _aod_colors()
     im = Image.new("RGB", (W, H), (0, 0, 0))
     d = ImageDraw.Draw(im)
     y = 232 + shake
     x0 = (W - BIG_A * 5) // 2
     for i, ch in enumerate(hhmm):
-        text(d, (x0 + i * BIG_A, y), ch, BIG, (44, 104, 64), bold=True)
-    rule(d, y + 34, 52, 140, (18, 42, 24), dash=2, gap=4)
-    # 电量：4 个暗点，低于 20% 变琥珀
-    on = (150, 104, 0) if batt <= 20 else (26, 62, 34)
+        text(d, (x0 + i * BIG_A, y), ch, BIG, ac["time"], bold=True)
+    rule(d, y + 34, 52, 140, ac["rule"], dash=2, gap=4)
+    on = ac["bat_low"] if batt <= 20 else ac["bat_on"]
     lit = 1 if batt <= 20 else max(1, min(4, int(batt // 25) + 1))
     for i in range(4):
         x = 60 + i * 12
         d.rectangle([x, 300 + shake, x + 7, 306 + shake],
-                    fill=on if i < lit else (10, 24, 14))
-    # 光标：两帧（亮 / 灭）
-    d.rectangle([130, 318 + shake, 144, 324 + shake], fill=(64, 232, 214))
+                    fill=on if i < lit else ac["bat_off"])
+    d.rectangle([130, 318 + shake, 144, 324 + shake], fill=ac["cursor"])
     return im
 
 # ------------------------------------------------------------------ 通知浮层
@@ -345,7 +394,7 @@ def draw_notify(img):
     rule(d, 356, 8, W - 9, G3, dash=2, gap=2)
     for i, k in enumerate(["^ESC", "O VIEW", "SWIPE>"]):
         bx = 10 + i * 58
-        d.rectangle([bx, 366, bx + 52, 384], outline=G3, width=1, fill=(6, 14, 9))
+        d.rectangle([bx, 366, bx + 52, 384], outline=G3, width=1, fill=PANEL)
         text(d, (bx + 26, 382), k, S16 - 3, CY if i == 1 else G2, anchor="ms")
 
     text(d, (12, 404), "$ reply >", S16, G3, anchor="la")
@@ -429,75 +478,84 @@ def build_layout(big, s16, s18, s20):
 
     def add(name, kind, **kw):
         kw.update(name=name, kind=kind)
+        if kind == "text" and "size" in kw and "y" in kw:
+            # 编辑器多用左上角坐标：top = 基线 + 字形上沿偏移
+            ref = "0" if (kw.get("font") or "").startswith("mono") else "A"
+            bb = font(kw["size"], kw.get("font", "").startswith("big"),
+                      kw.get("font") == "cjk26").getbbox(ref, anchor="ls")
+            kw["top_y"] = kw["y"] + bb[1]
+            kw["ink_h"] = bb[3] - bb[1]
         items.append(kw)
 
     add("status.prompt", "text", x=P, y=Y_STAT, anchor="ls", font="mono18",
-        size=S18, advance=A18, color="#1E9648", sample="root@band9")
+        size=S18, advance=A18, color=hx(G2), sample="root@band9")
     add("status.bt", "asset", file="assets/icons/bt.png",
-        x=W - P - 4 * A18 - 12, y=Y_STAT - 11, w=7, h=11, role="bt_link",
-        note="x 随电量位数右移：x = 182 - len(pct)*11 - 12")
-    add("status.pct", "text", x=W - P, y=Y_STAT, anchor="rs", font="mono18",
-        size=S18, advance=A18, color="#36FF74", sample="86%", role="battery")
+        x=W - P - 4 * A16 - 14, y=Y_STAT - 10, w=7, h=11, role="bt_link",
+        note="x 随电量位数右移：x = 182 - len(pct)*10 - 14")
+    add("status.pct", "text", x=W - P, y=Y_STAT, anchor="rs", font="mono16",
+        size=S16, advance=A16, color=hx(G1), sample="86%", role="battery",
+        note="16px 收窄，三位数/100% 也不挤；bt 图标 x = 182 - len(pct)*10 - 14")
     add("status.batbar", "bar", x=W - P - A18 * 3 - 28, y=Y_STAT - 12, w=22, h=9,
-        segs=4, gap=2, color="#36FF74", off="#105228", role="battery")
-    add("rule1", "rule", x0=P, x1=W - P, y=Y_R1, dash=2, gap=2, color="#105228")
+        segs=4, gap=2, color=hx(G1), off=hx(G3), role="battery")
+    add("rule1", "rule", x0=P, x1=W - P, y=Y_R1, dash=2, gap=2, color=hx(G3))
     add("cmd.date", "text", x=P, y=Y_CMD, anchor="ls", font="mono18", size=S18,
-        advance=A18, color="#1E9648", sample="$ date")
+        advance=A18, color=hx(G2), sample="$ date")
     add("cmd.comment", "text", x=P + A18 * 6 + 6, y=Y_CMD, anchor="ls", font="mono18",
-        size=S18, advance=A18, color="#105228", sample="# local")
+        size=S18, advance=A18, color=hx(G3), sample="# local")
     add("time", "digits", sheet="big", x=(W - BIG_A * 5) // 2, y=Y_TIME,
-        anchor="baseline", advance=BIG_A, size=BIG, color="#E2FFEC",
-        sample="08:24", note="HH:MM 共 5 字（4 数字 + 冒号），整行 160px 居中；"
-                             "空格位不放字；12 小时制时 AM/PM 放 date 行")
+        anchor="baseline", advance=BIG_A, size=BIG, color=hx(G0),
+        sample="08:24", top_y=Y_TIME - 40, ink_h=41,
+        note="HH:MM 共 5 字（4 数字 + 冒号），整行 160px 居中；空格位不放字；"
+             "编辑器按左上角摆时 y=60；12 小时制时 AM/PM 放 date 行")
     add("date", "text", x=P, y=Y_DATE, anchor="ls", font="mono20", size=S20,
-        advance=A20, color="#1E9648", sample="WED 12JUN25",
+        advance=A20, color=hx(G2), sample="WED 12JUN25",
         note="≤12 字符（12×12=144px）；12 小时制改成 'WED 12JUN2025 AM' 需 15 字符 → 换 16px")
     add("cmd.sec", "text", x=W - P, y=Y_CMD, anchor="rs", font="mono16", size=S16,
-        advance=A16, color="#36FF74", sample=":37", role="second",
+        advance=A16, color=hx(G1), sample=":37", role="second",
         note="秒只在命令行动；静态表盘可关掉，减少每秒唤醒")
-    add("rule2", "rule", x0=P, x1=W - P, y=Y_R2, dash=1, gap=3, color="#105228")
+    add("rule2", "rule", x0=P, x1=W - P, y=Y_R2, dash=1, gap=3, color=hx(G3))
     add("resmon.hdr", "text", x=P, y=Y_HD, anchor="ls", font="mono18", size=S18,
-        advance=A18, color="#36FF74", sample="# resmon")
+        advance=A18, color=hx(G1), sample="# resmon")
     add("resmon.clock", "text", x=W - P, y=Y_HD, anchor="rs", font="mono18", size=S18,
-        advance=A18, color="#105228", sample="08:24")
+        advance=A18, color=hx(G3), sample="08:24")
     labels = ["BAT", "HR", "STEP", "KCAL", "TEMP"]
     roles = ["battery", "heart_rate", "steps", "calories", "weather"]
     vals = ["86%", "72", "8204", "312", "27C"]
     for i in range(5):
         y = Y_ROW0 + i * ROW_STEP
         add(f"row{i}.label", "text", x=P, y=y, anchor="ls", font="mono18", size=S18,
-            advance=A18, color="#1E9648", sample=labels[i])
+            advance=A18, color=hx(G2), sample=labels[i])
         add(f"row{i}.bar", "bar", x=P + A18 * 5 + 8, y=y - 12, w=60, h=10, segs=10, gap=2,
-            color="#36FF74", off="#105228", role=roles[i],
+            color=hx(G1), off=hx(G3), role=roles[i],
             note="心率行换 wave 波形（8 根柱，宽 6、间距 2）")
         add(f"row{i}.value", "text", x=W - P, y=y, anchor="rs", font="mono18", size=S18,
-            advance=A18, color="#36FF74", sample=vals[i], role=roles[i])
+            advance=A18, color=hx(G1), sample=vals[i], role=roles[i])
     add("log.hdr", "text", x=P, y=Y_LOGHD, anchor="ls", font="mono16", size=S16,
-        advance=A16, color="#1E9648", sample="$ tail band.log",
+        advance=A16, color=hx(G2), sample="$ tail band.log",
         note="16px 行宽 ≤17 字符；日志行由系统事件刷新（非每秒跳数）")
     for i in range(4):
         add(f"log{i}", "text", x=P, y=Y_LOG0 + i * LOG_STEP, anchor="ls", font="mono16",
-            size=S16, advance=A16, color="#1E9648", sample="[08:20] btn1 wake",
+            size=S16, advance=A16, color=hx(G2), sample="[08:20] btn1 wake",
             role="event_log")
-    add("rule3", "rule", x0=P, x1=W - P, y=Y_R3, dash=2, gap=2, color="#105228")
+    add("rule3", "rule", x0=P, x1=W - P, y=Y_R3, dash=2, gap=2, color=hx(G3))
     add("uptime.cmd", "text", x=P, y=Y_UP, anchor="ls", font="mono18", size=S18,
-        advance=A18, color="#1E9648", sample="$ uptime")
+        advance=A18, color=hx(G2), sample="$ uptime")
     add("uptime.val", "text", x=W - P, y=Y_UP, anchor="rs", font="mono18", size=S18,
-        advance=A18, color="#36FF74", sample="12d 3h")
+        advance=A18, color=hx(G1), sample="12d 3h")
     add("prompt", "text", x=P, y=Y_PROMPT, anchor="ls", font="mono18", size=S18,
-        advance=A18, color="#36FF74", sample="root@band9:~$")
+        advance=A18, color=hx(G1), sample="root@band9:~$")
     add("cursor", "rect", x=P + A18 * 13 + 5, y=Y_PROMPT - 12, w=9, h=14,
-        color="#40E8D6", role="blink", note="200ms 亮 / 300ms 灭；静态面可常亮")
+        color=hx(CY), role="blink", note="200ms 亮 / 300ms 灭；静态面可常亮")
     add("tail", "text", x=P, y=Y_TAIL, anchor="ls", font="mono16", size=S16,
-        advance=A16, color="#105228", sample="bt:1 dnd:0 ala:1")
+        advance=A16, color=hx(G3), sample="bt:1 dnd:0 ala:1")
 
     return dict(
         canvas=dict(w=W, h=H, model="Xiaomi Smart Band 9 / 9 NFC", panel="AMOLED",
                     aspect="胶囊竖屏", safe_inset=P,
                     note="圆角区域不放关键信息；四周留 10px 安全边距，文字最右/最下不出 182/472"),
-        palette=dict(bg="#040705", g0="#E2FFEC", g1="#36FF74", g2="#1E9648",
-                     g3="#105228", cyan="#40E8D6", amber="#FFB000", red="#FF5454",
-                     panel="#08120C"),
+        palette=dict(bg=hx(BG), g0=hx(G0), g1=hx(G1), g2=hx(G2),
+                     g3=hx(G3), cyan=hx(CY), amber=hx(AM), red=hx(RED),
+                     panel=hx(PANEL), theme=THEME),
         fonts=dict(mono16=dict(family="DejaVu Sans Mono", size=S16, advance=A16),
                    mono18=dict(family="DejaVu Sans Mono", size=S18, advance=A18),
                    mono20=dict(family="DejaVu Sans Mono", size=S20, advance=A20),
@@ -506,42 +564,49 @@ def build_layout(big, s16, s18, s20):
         glyphs=dict(big=big, small16=s16, small18=s18, small20=s20),
         elements=items,
         notify=dict(
-            backdrop=dict(x=0, y=132, w=W, h=H - 132, color="#000000"),
-            card=dict(x=4, y=146, w=W - 9, h=284, fill="#08120C", border="#36FF74"),
+            backdrop=dict(x=0, y=132, w=W, h=H - 132, color=hx(BG)),
+            card=dict(x=4, y=146, w=W - 9, h=284, fill=hx(PANEL), border=hx(G1)),
             rows=[
                 dict(name="ntf.title", x=12, y=154, anchor="la", font="mono16",
-                     sample="[ INCOMING ]", color="#36FF74"),
+                     sample="[ INCOMING ]", color=hx(G1)),
                 dict(name="ntf.count", x=W - 12, y=154, anchor="ra", font="mono16",
-                     sample="1/3", color="#105228"),
+                     sample="1/3", color=hx(G3)),
                 dict(name="ntf.rule", x0=8, x1=W - 9, y=174, dash=2, gap=2),
                 dict(name="ntf.app", x=12, y=184, anchor="la", font="mono16",
-                     sample="WECHAT", color="#1E9648"),
+                     sample="WECHAT", color=hx(G2)),
                 dict(name="ntf.time", x=W - 12, y=184, anchor="ra", font="mono16",
-                     sample="08:24", color="#105228"),
+                     sample="08:24", color=hx(G3)),
                 dict(name="ntf.sender", x=12, y=204, anchor="la", font="cjk26",
-                     sample="老王", color="#36FF74"),
+                     sample="老王", color=hx(G1)),
                 dict(name="ntf.line1", x=12, y=242, anchor="la", font="cjk22",
-                     sample="晚上 7 点老地方", color="#36FF74"),
+                     sample="晚上 7 点老地方", color=hx(G1)),
                 dict(name="ntf.line2", x=12, y=274, anchor="la", font="cjk22",
-                     sample="到了给你留位", color="#1E9648"),
+                     sample="到了给你留位", color=hx(G2)),
                 dict(name="ntf.meta", x=12, y=306, anchor="la", font="mono16",
-                     sample="seen:1 unread:2", color="#105228"),
+                     sample="seen:1 unread:2", color=hx(G3)),
                 dict(name="ntf.keys", x=10, y=366, w=52, h=18, gap=6,
                      sample=["^ESC", "O VIEW", "SWIPE>"]),
                 dict(name="ntf.prompt", x=12, y=404, anchor="la", font="mono16",
-                     sample="$ reply >", color="#105228"),
+                     sample="$ reply >", color=hx(G3)),
             ],
         ),
         aod=dict(
-            bg="#000000",
-            time=dict(y=232, x=(W - BIG_A * 5) // 2, font="big53", color="#2C6840",
-                      sample="08:24", dim_note="亮度 ≈ 28% 的 G1，避免全亮烧屏"),
+            bg=hx(BG),
+            time=dict(y=232, x=(W - BIG_A * 5) // 2, font="big53",
+                      color=hx(_aod_colors()["time"]),
+                      sample="08:24",
+                      dim_note="亮度取主色的 ~28%，避免全亮烧屏"),
             shake=dict(offsets=[0, 2, 4, 2], period_min=60,
                        note="每小时把整块内容按 offsets 循环下移，1px/步，防 AMOLED 残影"),
-            rule=dict(y=266, x0=52, x1=140, color="#122A18", dash=2, gap=4),
-            battery=dict(x=60, y=300, cell=7, gap=5, lit_color="#1A3E22",
-                         low_color="#966800", note="4 格，<20% 转琥珀"),
-            cursor=dict(x=130, y=318, w=14, h=6, color="#40E8D6",
+            rule=dict(y=266, x0=52, x1=140, color=hx(_aod_colors()["rule"]),
+                      dash=2, gap=4),
+            battery=dict(x=60, y=300, cell=7, gap=5,
+                         lit_color=hx(_aod_colors()["bat_on"]),
+                         low_color=hx(_aod_colors()["bat_low"]),
+                         off_color=hx(_aod_colors()["bat_off"]),
+                         note="4 格，<20% 用最亮那一格提示"),
+            cursor=dict(x=130, y=318, w=14, h=6,
+                        color=hx(_aod_colors()["cursor"]),
                         note="AOD 内 1Hz 闪；静态面可常亮"),
         ),
     )
@@ -551,8 +616,8 @@ def build_spec(layout):
     out = ["# 终端表盘 · 坐标表 (192×490)", "",
            "所有 x/y 均为像素，`anchor=` 说明基线对齐方式：`ls` 左-基线，"
            "`rs` 右-基线，`la` 左-顶，`ra` 右-顶。", "",
-           "| # | 名称 | 类型 | x | y | 宽高 | 字号/步进 | 颜色 | 示例 |",
-           "|---|------|------|---|---|------|-----------|------|------|"]
+           "| # | 名称 | 类型 | x | y(基线) | 宽高 | 字号/步进 | 颜色 | 示例 | y(左上) |",
+           "|---|------|------|---|---|------|-----------|------|------|------|"]
     for i, e in enumerate(layout["elements"], 1):
         fsize = ""
         if e.get("size"):
@@ -560,8 +625,9 @@ def build_spec(layout):
         wh = f"{e['w']}×{e.get('h', '')}" if e.get("w") else ""
         x = e.get("x", e.get("x0", ""))
         y = e.get("y", "")
+        top = e.get("top_y", "")
         out.append(f"| {i} | `{e['name']}` | {e['kind']} | {x} | {y} | {wh} | "
-                   f"{fsize} | `{e.get('color', '')}` | {e.get('sample', '')} |")
+                   f"{fsize} | `{e.get('color', '')}` | {e.get('sample', '')} | {top} |")
     # 通知卡
     ntf = layout.get("notify") or {}
     out += ["", "## 通知卡（preview_notify.png）", "",

@@ -9,15 +9,16 @@
     "note": "圆角区域不放关键信息；四周留 10px 安全边距，文字最右/最下不出 182/472"
   },
   "palette": {
-    "bg": "#040705",
-    "g0": "#E2FFEC",
-    "g1": "#36FF74",
-    "g2": "#1E9648",
-    "g3": "#105228",
-    "cyan": "#40E8D6",
-    "amber": "#FFB000",
-    "red": "#FF5454",
-    "panel": "#08120C"
+    "bg": "#000000",
+    "g0": "#FFFFFF",
+    "g1": "#D4D4D4",
+    "g2": "#8A8A8A",
+    "g3": "#383838",
+    "cyan": "#FFFFFF",
+    "amber": "#FFFFFF",
+    "red": "#FFFFFF",
+    "panel": "#101010",
+    "theme": "mono"
   },
   "fonts": {
     "mono16": {
@@ -2089,19 +2090,21 @@
       "font": "mono18",
       "size": 18,
       "advance": 11,
-      "color": "#1E9648",
+      "color": "#8A8A8A",
       "sample": "root@band9",
       "name": "status.prompt",
-      "kind": "text"
+      "kind": "text",
+      "top_y": 7,
+      "ink_h": 13
     },
     {
       "file": "assets/icons/bt.png",
-      "x": 126,
-      "y": 9,
+      "x": 128,
+      "y": 10,
       "w": 7,
       "h": 11,
       "role": "bt_link",
-      "note": "x 随电量位数右移：x = 182 - len(pct)*11 - 12",
+      "note": "x 随电量位数右移：x = 182 - len(pct)*10 - 14",
       "name": "status.bt",
       "kind": "asset"
     },
@@ -2109,14 +2112,17 @@
       "x": 182,
       "y": 20,
       "anchor": "rs",
-      "font": "mono18",
-      "size": 18,
-      "advance": 11,
-      "color": "#36FF74",
+      "font": "mono16",
+      "size": 16,
+      "advance": 10,
+      "color": "#D4D4D4",
       "sample": "86%",
       "role": "battery",
+      "note": "16px 收窄，三位数/100% 也不挤；bt 图标 x = 182 - len(pct)*10 - 14",
       "name": "status.pct",
-      "kind": "text"
+      "kind": "text",
+      "top_y": 8,
+      "ink_h": 12
     },
     {
       "x": 121,
@@ -2125,8 +2131,8 @@
       "h": 9,
       "segs": 4,
       "gap": 2,
-      "color": "#36FF74",
-      "off": "#105228",
+      "color": "#D4D4D4",
+      "off": "#383838",
       "role": "battery",
       "name": "status.batbar",
       "kind": "bar"
@@ -2137,7 +2143,7 @@
       "y": 26,
       "dash": 2,
       "gap": 2,
-      "color": "#105228",
+      "color": "#383838",
       "name": "rule1",
       "kind": "rule"
     },
@@ -2148,10 +2154,12 @@
       "font": "mono18",
       "size": 18,
       "advance": 11,
-      "color": "#1E9648",
+      "color": "#8A8A8A",
       "sample": "$ date",
       "name": "cmd.date",
-      "kind": "text"
+      "kind": "text",
+      "top_y": 32,
+      "ink_h": 13
     },
     {
       "x": 82,
@@ -2160,10 +2168,12 @@
       "font": "mono18",
       "size": 18,
       "advance": 11,
-      "color": "#105228",
+      "color": "#383838",
       "sample": "# local",
       "name": "cmd.comment",
-      "kind": "text"
+      "kind": "text",
+      "top_y": 32,
+      "ink_h": 13
     },
     {
       "sheet": "big",
@@ -2172,9 +2182,11 @@
       "anchor": "baseline",
       "advance": 32,
       "size": 53,
-      "color": "#E2FFEC",
+      "color": "#FFFFFF",
       "sample": "08:24",
-      "note": "HH:MM 共 5 字（4 数字 + 冒号），整行 160px 居中；空格位不放字；12 小时制时 AM/PM 放 date 行",
+      "top_y": 60,
+      "ink_h": 41,
+      "note": "HH:MM 共 5 字（4 数字 + 冒号），整行 160px 居中；空格位不放字；编辑器按左上角摆时 y=60；12 小时制时 AM/PM 放 date 行",
       "name": "time",
       "kind": "digits"
     },
@@ -2185,11 +2197,13 @@
       "font": "mono20",
       "size": 20,
       "advance": 12,
-      "color": "#1E9648",
+      "color": "#8A8A8A",
       "sample": "WED 12JUN25",
       "note": "≤12 字符（12×12=144px）；12 小时制改成 'WED 12JUN2025 AM' 需 15 字符 → 换 16px",
       "name": "date",
-      "kind": "text"
+      "kind": "text",
+      "top_y": 109,
+      "ink_h": 15
     },
     {
       "x": 182,
@@ -2198,12 +2212,14 @@
       "font": "mono16",
       "size": 16,
       "advance": 10,
-      "color": "#36FF74",
+      "color": "#D4D4D4",
       "sample": ":37",
       "role": "second",
       "note": "秒只在命令行动；静态表盘可关掉，减少每秒唤醒",
       "name": "cmd.sec",
-      "kind": "text"
+      "kind": "text",
+      "top_y": 33,
+      "ink_h": 12
     },
     {
       "x0": 10,
@@ -2211,7 +2227,7 @@
       "y": 134,
       "dash": 1,
       "gap": 3,
-      "color": "#105228",
+      "color": "#383838",
       "name": "rule2",
       "kind": "rule"
     },
@@ -2222,10 +2238,12 @@
       "font": "mono18",
       "size": 18,
       "advance": 11,
-      "color": "#36FF74",
+      "color": "#D4D4D4",
       "sample": "# resmon",
       "name": "resmon.hdr",
-      "kind": "text"
+      "kind": "text",
+      "top_y": 143,
+      "ink_h": 13
     },
     {
       "x": 182,
@@ -2234,10 +2252,12 @@
       "font": "mono18",
       "size": 18,
       "advance": 11,
-      "color": "#105228",
+      "color": "#383838",
       "sample": "08:24",
       "name": "resmon.clock",
-      "kind": "text"
+      "kind": "text",
+      "top_y": 143,
+      "ink_h": 13
     },
     {
       "x": 10,
@@ -2246,10 +2266,12 @@
       "font": "mono18",
       "size": 18,
       "advance": 11,
-      "color": "#1E9648",
+      "color": "#8A8A8A",
       "sample": "BAT",
       "name": "row0.label",
-      "kind": "text"
+      "kind": "text",
+      "top_y": 169,
+      "ink_h": 13
     },
     {
       "x": 73,
@@ -2258,8 +2280,8 @@
       "h": 10,
       "segs": 10,
       "gap": 2,
-      "color": "#36FF74",
-      "off": "#105228",
+      "color": "#D4D4D4",
+      "off": "#383838",
       "role": "battery",
       "note": "心率行换 wave 波形（8 根柱，宽 6、间距 2）",
       "name": "row0.bar",
@@ -2272,11 +2294,13 @@
       "font": "mono18",
       "size": 18,
       "advance": 11,
-      "color": "#36FF74",
+      "color": "#D4D4D4",
       "sample": "86%",
       "role": "battery",
       "name": "row0.value",
-      "kind": "text"
+      "kind": "text",
+      "top_y": 169,
+      "ink_h": 13
     },
     {
       "x": 10,
@@ -2285,10 +2309,12 @@
       "font": "mono18",
       "size": 18,
       "advance": 11,
-      "color": "#1E9648",
+      "color": "#8A8A8A",
       "sample": "HR",
       "name": "row1.label",
-      "kind": "text"
+      "kind": "text",
+      "top_y": 194,
+      "ink_h": 13
     },
     {
       "x": 73,
@@ -2297,8 +2323,8 @@
       "h": 10,
       "segs": 10,
       "gap": 2,
-      "color": "#36FF74",
-      "off": "#105228",
+      "color": "#D4D4D4",
+      "off": "#383838",
       "role": "heart_rate",
       "note": "心率行换 wave 波形（8 根柱，宽 6、间距 2）",
       "name": "row1.bar",
@@ -2311,11 +2337,13 @@
       "font": "mono18",
       "size": 18,
       "advance": 11,
-      "color": "#36FF74",
+      "color": "#D4D4D4",
       "sample": "72",
       "role": "heart_rate",
       "name": "row1.value",
-      "kind": "text"
+      "kind": "text",
+      "top_y": 194,
+      "ink_h": 13
     },
     {
       "x": 10,
@@ -2324,10 +2352,12 @@
       "font": "mono18",
       "size": 18,
       "advance": 11,
-      "color": "#1E9648",
+      "color": "#8A8A8A",
       "sample": "STEP",
       "name": "row2.label",
-      "kind": "text"
+      "kind": "text",
+      "top_y": 219,
+      "ink_h": 13
     },
     {
       "x": 73,
@@ -2336,8 +2366,8 @@
       "h": 10,
       "segs": 10,
       "gap": 2,
-      "color": "#36FF74",
-      "off": "#105228",
+      "color": "#D4D4D4",
+      "off": "#383838",
       "role": "steps",
       "note": "心率行换 wave 波形（8 根柱，宽 6、间距 2）",
       "name": "row2.bar",
@@ -2350,11 +2380,13 @@
       "font": "mono18",
       "size": 18,
       "advance": 11,
-      "color": "#36FF74",
+      "color": "#D4D4D4",
       "sample": "8204",
       "role": "steps",
       "name": "row2.value",
-      "kind": "text"
+      "kind": "text",
+      "top_y": 219,
+      "ink_h": 13
     },
     {
       "x": 10,
@@ -2363,10 +2395,12 @@
       "font": "mono18",
       "size": 18,
       "advance": 11,
-      "color": "#1E9648",
+      "color": "#8A8A8A",
       "sample": "KCAL",
       "name": "row3.label",
-      "kind": "text"
+      "kind": "text",
+      "top_y": 244,
+      "ink_h": 13
     },
     {
       "x": 73,
@@ -2375,8 +2409,8 @@
       "h": 10,
       "segs": 10,
       "gap": 2,
-      "color": "#36FF74",
-      "off": "#105228",
+      "color": "#D4D4D4",
+      "off": "#383838",
       "role": "calories",
       "note": "心率行换 wave 波形（8 根柱，宽 6、间距 2）",
       "name": "row3.bar",
@@ -2389,11 +2423,13 @@
       "font": "mono18",
       "size": 18,
       "advance": 11,
-      "color": "#36FF74",
+      "color": "#D4D4D4",
       "sample": "312",
       "role": "calories",
       "name": "row3.value",
-      "kind": "text"
+      "kind": "text",
+      "top_y": 244,
+      "ink_h": 13
     },
     {
       "x": 10,
@@ -2402,10 +2438,12 @@
       "font": "mono18",
       "size": 18,
       "advance": 11,
-      "color": "#1E9648",
+      "color": "#8A8A8A",
       "sample": "TEMP",
       "name": "row4.label",
-      "kind": "text"
+      "kind": "text",
+      "top_y": 269,
+      "ink_h": 13
     },
     {
       "x": 73,
@@ -2414,8 +2452,8 @@
       "h": 10,
       "segs": 10,
       "gap": 2,
-      "color": "#36FF74",
-      "off": "#105228",
+      "color": "#D4D4D4",
+      "off": "#383838",
       "role": "weather",
       "note": "心率行换 wave 波形（8 根柱，宽 6、间距 2）",
       "name": "row4.bar",
@@ -2428,11 +2466,13 @@
       "font": "mono18",
       "size": 18,
       "advance": 11,
-      "color": "#36FF74",
+      "color": "#D4D4D4",
       "sample": "27C",
       "role": "weather",
       "name": "row4.value",
-      "kind": "text"
+      "kind": "text",
+      "top_y": 269,
+      "ink_h": 13
     },
     {
       "x": 10,
@@ -2441,11 +2481,13 @@
       "font": "mono16",
       "size": 16,
       "advance": 10,
-      "color": "#1E9648",
+      "color": "#8A8A8A",
       "sample": "$ tail band.log",
       "note": "16px 行宽 ≤17 字符；日志行由系统事件刷新（非每秒跳数）",
       "name": "log.hdr",
-      "kind": "text"
+      "kind": "text",
+      "top_y": 294,
+      "ink_h": 12
     },
     {
       "x": 10,
@@ -2454,11 +2496,13 @@
       "font": "mono16",
       "size": 16,
       "advance": 10,
-      "color": "#1E9648",
+      "color": "#8A8A8A",
       "sample": "[08:20] btn1 wake",
       "role": "event_log",
       "name": "log0",
-      "kind": "text"
+      "kind": "text",
+      "top_y": 314,
+      "ink_h": 12
     },
     {
       "x": 10,
@@ -2467,11 +2511,13 @@
       "font": "mono16",
       "size": 16,
       "advance": 10,
-      "color": "#1E9648",
+      "color": "#8A8A8A",
       "sample": "[08:20] btn1 wake",
       "role": "event_log",
       "name": "log1",
-      "kind": "text"
+      "kind": "text",
+      "top_y": 332,
+      "ink_h": 12
     },
     {
       "x": 10,
@@ -2480,11 +2526,13 @@
       "font": "mono16",
       "size": 16,
       "advance": 10,
-      "color": "#1E9648",
+      "color": "#8A8A8A",
       "sample": "[08:20] btn1 wake",
       "role": "event_log",
       "name": "log2",
-      "kind": "text"
+      "kind": "text",
+      "top_y": 350,
+      "ink_h": 12
     },
     {
       "x": 10,
@@ -2493,11 +2541,13 @@
       "font": "mono16",
       "size": 16,
       "advance": 10,
-      "color": "#1E9648",
+      "color": "#8A8A8A",
       "sample": "[08:20] btn1 wake",
       "role": "event_log",
       "name": "log3",
-      "kind": "text"
+      "kind": "text",
+      "top_y": 368,
+      "ink_h": 12
     },
     {
       "x0": 10,
@@ -2505,7 +2555,7 @@
       "y": 392,
       "dash": 2,
       "gap": 2,
-      "color": "#105228",
+      "color": "#383838",
       "name": "rule3",
       "kind": "rule"
     },
@@ -2516,10 +2566,12 @@
       "font": "mono18",
       "size": 18,
       "advance": 11,
-      "color": "#1E9648",
+      "color": "#8A8A8A",
       "sample": "$ uptime",
       "name": "uptime.cmd",
-      "kind": "text"
+      "kind": "text",
+      "top_y": 397,
+      "ink_h": 13
     },
     {
       "x": 182,
@@ -2528,10 +2580,12 @@
       "font": "mono18",
       "size": 18,
       "advance": 11,
-      "color": "#36FF74",
+      "color": "#D4D4D4",
       "sample": "12d 3h",
       "name": "uptime.val",
-      "kind": "text"
+      "kind": "text",
+      "top_y": 397,
+      "ink_h": 13
     },
     {
       "x": 10,
@@ -2540,17 +2594,19 @@
       "font": "mono18",
       "size": 18,
       "advance": 11,
-      "color": "#36FF74",
+      "color": "#D4D4D4",
       "sample": "root@band9:~$",
       "name": "prompt",
-      "kind": "text"
+      "kind": "text",
+      "top_y": 435,
+      "ink_h": 13
     },
     {
       "x": 158,
       "y": 436,
       "w": 9,
       "h": 14,
-      "color": "#40E8D6",
+      "color": "#FFFFFF",
       "role": "blink",
       "note": "200ms 亮 / 300ms 灭；静态面可常亮",
       "name": "cursor",
@@ -2563,10 +2619,12 @@
       "font": "mono16",
       "size": 16,
       "advance": 10,
-      "color": "#105228",
+      "color": "#383838",
       "sample": "bt:1 dnd:0 ala:1",
       "name": "tail",
-      "kind": "text"
+      "kind": "text",
+      "top_y": 460,
+      "ink_h": 12
     }
   ],
   "notify": {
@@ -2582,8 +2640,8 @@
       "y": 146,
       "w": 183,
       "h": 284,
-      "fill": "#08120C",
-      "border": "#36FF74"
+      "fill": "#101010",
+      "border": "#D4D4D4"
     },
     "rows": [
       {
@@ -2593,7 +2651,7 @@
         "anchor": "la",
         "font": "mono16",
         "sample": "[ INCOMING ]",
-        "color": "#36FF74"
+        "color": "#D4D4D4"
       },
       {
         "name": "ntf.count",
@@ -2602,7 +2660,7 @@
         "anchor": "ra",
         "font": "mono16",
         "sample": "1/3",
-        "color": "#105228"
+        "color": "#383838"
       },
       {
         "name": "ntf.rule",
@@ -2619,7 +2677,7 @@
         "anchor": "la",
         "font": "mono16",
         "sample": "WECHAT",
-        "color": "#1E9648"
+        "color": "#8A8A8A"
       },
       {
         "name": "ntf.time",
@@ -2628,7 +2686,7 @@
         "anchor": "ra",
         "font": "mono16",
         "sample": "08:24",
-        "color": "#105228"
+        "color": "#383838"
       },
       {
         "name": "ntf.sender",
@@ -2637,7 +2695,7 @@
         "anchor": "la",
         "font": "cjk26",
         "sample": "老王",
-        "color": "#36FF74"
+        "color": "#D4D4D4"
       },
       {
         "name": "ntf.line1",
@@ -2646,7 +2704,7 @@
         "anchor": "la",
         "font": "cjk22",
         "sample": "晚上 7 点老地方",
-        "color": "#36FF74"
+        "color": "#D4D4D4"
       },
       {
         "name": "ntf.line2",
@@ -2655,7 +2713,7 @@
         "anchor": "la",
         "font": "cjk22",
         "sample": "到了给你留位",
-        "color": "#1E9648"
+        "color": "#8A8A8A"
       },
       {
         "name": "ntf.meta",
@@ -2664,7 +2722,7 @@
         "anchor": "la",
         "font": "mono16",
         "sample": "seen:1 unread:2",
-        "color": "#105228"
+        "color": "#383838"
       },
       {
         "name": "ntf.keys",
@@ -2686,7 +2744,7 @@
         "anchor": "la",
         "font": "mono16",
         "sample": "$ reply >",
-        "color": "#105228"
+        "color": "#383838"
       }
     ]
   },
@@ -2696,9 +2754,9 @@
       "y": 232,
       "x": 16,
       "font": "big53",
-      "color": "#2C6840",
+      "color": "#464646",
       "sample": "08:24",
-      "dim_note": "亮度 ≈ 28% 的 G1，避免全亮烧屏"
+      "dim_note": "亮度取主色的 ~28%，避免全亮烧屏"
     },
     "shake": {
       "offsets": [
@@ -2714,7 +2772,7 @@
       "y": 266,
       "x0": 52,
       "x1": 140,
-      "color": "#122A18",
+      "color": "#181818",
       "dash": 2,
       "gap": 4
     },
@@ -2723,16 +2781,17 @@
       "y": 300,
       "cell": 7,
       "gap": 5,
-      "lit_color": "#1A3E22",
-      "low_color": "#966800",
-      "note": "4 格，<20% 转琥珀"
+      "lit_color": "#585858",
+      "low_color": "#C8C8C8",
+      "off_color": "#141414",
+      "note": "4 格，<20% 用最亮那一格提示"
     },
     "cursor": {
       "x": 130,
       "y": 318,
       "w": 14,
       "h": 6,
-      "color": "#40E8D6",
+      "color": "#969696",
       "note": "AOD 内 1Hz 闪；静态面可常亮"
     }
   }
